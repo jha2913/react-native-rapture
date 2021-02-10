@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 
 // 함수의 리턴 값이 JSX.Element면
 // React 컴포넌트가 된다.
 
 // JSX를 쓸려면 import React from 'react';
-const HelloWorld = () => {
+const Home = ({ navigation }) => {
   return (
     <View
       style={{
@@ -13,8 +13,12 @@ const HelloWorld = () => {
         justifyContent: "center",
         alignItems: "center"
       }}>
-      <Text>Hello, world!</Text>
+      <Text>Home</Text>
+      <Button 
+        title="Go To Details" 
+        onPress={()=>{navigation.navigate("Details", {id: 1})}}
+      />      
     </View>
   )
 }
-export default HelloWorld;
+export default Home;
